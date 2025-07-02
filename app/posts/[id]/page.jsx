@@ -1,3 +1,6 @@
+"use client"
+
+
 import PostDetail from '@/pages/components/post/detail/PostDetail';
 import ScrollToTopButton from '@/pages/components/post/common/ScrollToTopButton';
 import { getBaseUrl } from '@/lib/getBaseUrl';
