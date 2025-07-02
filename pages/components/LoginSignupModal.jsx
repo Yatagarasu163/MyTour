@@ -7,7 +7,7 @@ import { signIn } from "next-auth/react";
 
 import UserLoginForm from "./UserLoginForm";
 import UserSignUpForm from "./UserSignUpForm";
-import { AdminLoginForm } from "./AdminLoginForm";
+import AdminLoginForm from "./AdminLoginForm";
 import AdminSignUpForm from "./AdminSignUpForm";
 import SuperAdminLoginForm from "./SuperAdminLoginForm";
 

@@ -1,7 +1,7 @@
 import { signIn } from "next-auth/react";
 import { useState } from "react";
 
-export function AdminLoginForm(){
+export default function AdminLoginForm(){
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");

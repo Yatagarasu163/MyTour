@@ -23,42 +23,6 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <nav className="flex items-center justify-between bg-black">
-          <div className="flex items-center gap-2">
-            <a href="/">
-              <img
-                className="invert"
-                src="/next.svg"
-                alt="Next.js logo"
-                width={180}
-                height={38}
-              />
-            </a>
-            <a href="/">
-              <img src="/file.svg" alt="File icon" width={16} height={16} />
-            </a>
-          </div>
-          <div className="flex items-center gap-2">
-            <a href="/">
-              <img
-                className="invert"
-                src="/globe.svg"
-                alt="Globe icon"
-                width={16}
-                height={16}
-              />
-            </a>
-            <a href="/">
-              <img
-                className="invert"
-                src="/window.svg"
-                alt="Window icon"
-                width={16}
-                height={16}
-              />
-            </a>
-          </div>
-        </nav>
         <SessionWrapper>{children}</SessionWrapper>
       </body>
     </html>
