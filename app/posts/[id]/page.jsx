@@ -3,7 +3,7 @@
 
 import PostDetail from '@/pages/components/post/detail/PostDetail';
 import ScrollToTopButton from '@/pages/components/post/common/ScrollToTopButton';
-import { getBaseUrl } from '@/lib/getBaseUrl';
+// import { getBaseUrl } from '@/lib/getBaseUrl';
 import { notFound } from 'next/navigation';
 import PostReportButton from '@/pages/components/reporting/PostReportButton';
 
@@ -15,7 +15,7 @@ export default async function PostPage({ params }) {
   const { id } = await params;
 
   // Fetch the main post data
-  const postRes = await fetch(`${baseUrl}/api/posts?id=${id}`, {
+  const postRes = await fetch(`/api/posts?id=${id}`, {
     cache: 'no-store',
   });
   const { posts } = await postRes.json();
@@ -28,13 +28,13 @@ export default async function PostPage({ params }) {
   }
 
   // Fetch rating
-  const ratingRes = await fetch(`${baseUrl}/api/ratings?post_id=${id}`, {
+  const ratingRes = await fetch(`/api/ratings?post_id=${id}`, {
     cache: 'no-store',
   });
   const ratingData = await ratingRes.json();
 
   // Fetch comments
-  const commentsRes = await fetch(`${baseUrl}/api/comments?post_id=${id}&limit=10`, {
+  const commentsRes = await fetch(`/api/comments?post_id=${id}&limit=10`, {
     cache: 'no-store',
   });
   const comments = await commentsRes.json();
