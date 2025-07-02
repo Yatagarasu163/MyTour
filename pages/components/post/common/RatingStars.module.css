@@ -1,0 +1,24 @@
+.starWrapper {
+  position: relative;
+  display: inline-block;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #d1d5db; /* gray base */
+  overflow: hidden;
+}
+
+.starBackground {
+  position: relative;
+  z-index: 0;
+}
+
+.starForeground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 1;
+  color: #fbbf24; /* amber-400 */
+  pointer-events: none;
+}
