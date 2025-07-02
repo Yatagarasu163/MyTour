@@ -3,7 +3,7 @@
 //THIS IS A TEST PAGE FOR USERS 
 import { useSession } from 'next-auth/react';
 import SignOut from '../../../pages/components/SignOut';
-import SessionChecking from "../../../pages/components/SessionChecking";
+import SessionChecking from "../../component/SessionChecking";
 export default function TestUserPage() {
   const { data: session, status } = useSession();
 

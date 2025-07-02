@@ -4,7 +4,7 @@ import { use, useEffect, useState } from "react";
 import TripPlanDetails from "../../../../pages/components/trip-plan/TripPlanDetails";
 import PostTripForm from "../../../../pages/components/trip-plan/PostTripForm";
 import ConfirmModal from "../../../../pages/components/trip-plan/ConfirmModal";
-import SessionChecking from '../../../../pages/components/SessionChecking';
+import SessionChecking from '../../../component/SessionChecking';
 
 export default function PostTrip({ params }) {
     const router = useRouter();

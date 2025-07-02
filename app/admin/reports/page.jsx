@@ -3,7 +3,7 @@
 import {useEffect, useState} from "react";
 import { useSession } from "next-auth/react";
 import ReportsTable from "../../../pages/components/admin/ReportsTable";
-import SessionChecking from "../../../pages/components/SessionChecking";
+import SessionChecking from "../../component/SessionChecking";
 
 export default function AdminReports() {
     // hold all reports fetched from backend

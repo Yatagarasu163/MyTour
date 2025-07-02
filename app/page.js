@@ -1,7 +1,7 @@
 'use client'
 
 import Image from "next/image";
-import SessionChecking from "../pages/components/SessionChecking";
+import SessionChecking from "./component/SessionChecking";
 import SignOut from "../pages/components/SignOut";
 
 export default function Home() {

@@ -6,7 +6,7 @@ import { Card, CardTitle, CardHeader, CardContent } from "@/components/ui/card";
 import { Avatar } from "@/components/ui/avatar";
 import UserReportButton from "@/pages/components/reporting/UserReportButton";
 import { useParams, useRouter } from "next/navigation";
-import SessionChecking from "@/pages/components/SessionChecking";
+import SessionChecking from "@/app/component/SessionChecking";
 
 export default function Profile() {
   const [top5posts, settop5posts] = useState([]);

@@ -6,7 +6,7 @@ import StatCard from '../../../pages/components/admin/StatCard'
 import PreviewUsers from '../../../pages/components/admin/PreviewUsers';
 import PreviewReports from '../../../pages/components/admin/PreviewReports';
 import PreviewAdmins from '../../../pages/components/admin/PreviewAdmins';
-import SessionChecking from "../../../pages/components/SessionChecking";
+import SessionChecking from "../../component/SessionChecking";
 import SignOut from '../../../pages/components/SignOut';
 
 export default function AdminDashboard() {

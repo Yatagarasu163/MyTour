@@ -3,7 +3,7 @@ import { useState } from "react";
 import GenerateForm from "../../../pages/components/trip-plan/GenerateForm";
 import GeneratedItinerary from "../../../pages/components/trip-plan/GeneratedItinerary";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import SessionChecking from '../../../pages/components/SessionChecking';
+import SessionChecking from '../../component/SessionChecking';
 
 export default function TripGenerator() {
     const [tripName, setTripName] = useState("");

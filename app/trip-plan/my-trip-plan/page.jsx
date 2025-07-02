@@ -6,7 +6,7 @@ import ViewTripButton from '../../../pages/components/trip-plan/ViewTripButton';
 import MarkCompletedButton from '../../../pages/components/trip-plan/MarkCompletedButton';
 import PostTripButton from '../../../pages/components/trip-plan/PostTripButton'
 import DeleteTripButton from '../../../pages/components/trip-plan/DeleteTripButton';
-import SessionChecking from '../../../pages/components/SessionChecking';
+import SessionChecking from '../../component/SessionChecking';
 
 export default function SavedTrips() {
     const [trips, setTrips] = useState([]);

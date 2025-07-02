@@ -1,7 +1,7 @@
 'use client';
 import { use, useEffect, useState } from 'react';
 import TripPlanDetails from '../../../../pages/components/trip-plan/TripPlanDetails';
-import SessionChecking from '../../../../pages/components/SessionChecking';
+import SessionChecking from '../../../component/SessionChecking';
 
 export default function ViewTripPlan({ params: paramsPromise}) {
     const { plan_id } = use(paramsPromise);

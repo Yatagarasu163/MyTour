@@ -4,7 +4,7 @@ import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { Card, CardTitle, CardHeader, CardContent } from "@/components/ui/card";
 import { Avatar } from "@/components/ui/avatar";
-import SessionChecking from "@/pages/components/SessionChecking";
+import SessionChecking from "@/app/component/SessionChecking";
 
 export default function Profile() {
   const [top5posts, settop5posts] = useState([]);

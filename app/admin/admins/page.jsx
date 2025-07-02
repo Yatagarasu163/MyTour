@@ -4,7 +4,7 @@
 
 import {useEffect, useState} from "react";
 import AdminTable from "../../../pages/components/admin/AdminTable";
-import SessionChecking from "../../../pages/components/SessionChecking";
+import SessionChecking from "../../component/SessionChecking";
 
 export default function AdminList() {
     const [admins, setAdmins] = useState([]); //store list of admins

@@ -5,7 +5,7 @@ import ActivityDetails from "../../../../pages/components/trip-plan/ActivityDeta
 import ActivityFormInputs from "../../../../pages/components/trip-plan/ActivityFormInputs";
 import SaveButton from "../../../../pages/components/trip-plan/SaveButton";
 import ConfirmModal from "../../../../pages/components/trip-plan/ConfirmModal";
-import SessionChecking from '../../../../pages/components/SessionChecking';
+import SessionChecking from '../../../component/SessionChecking';
 
 export default function EditActivity({ params: paramsPromise }) {
     const { activity_id } = use(paramsPromise);

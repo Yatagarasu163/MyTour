@@ -3,7 +3,7 @@
 import { useEffect, useState} from "react";
 import { useSession } from "next-auth/react";
 import UserTable from "../../../pages/components/admin/UserTable";
-import SessionChecking from "../../../pages/components/SessionChecking";
+import SessionChecking from "../../component/SessionChecking";
 
 export default function AdminUsers(){
     //store list of users fetched from backend
