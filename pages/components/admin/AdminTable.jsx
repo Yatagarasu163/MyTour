@@ -37,7 +37,7 @@ export default function AdminTable({ admins, loading, onSuspendRestore, onDelete
     };
 
     const filteredAdmins = useMemo(() => {
-        let result = admins.filter((admin) => {
+        let result = admins?.filter((admin) => {
             const matchesSearch =
                 admin.admin_name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                 admin.admin_email.toLowerCase().includes(searchQuery.toLowerCase());
@@ -48,7 +48,7 @@ export default function AdminTable({ admins, loading, onSuspendRestore, onDelete
             return matchesSearch && matchesStatus;
         });
 
-        result.sort((a, b) => {
+        result?.sort((a, b) => {
             const valA = a[sortColumn];
             const valB = b[sortColumn];
 

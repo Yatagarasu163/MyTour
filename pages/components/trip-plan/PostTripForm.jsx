@@ -2,7 +2,7 @@
 
 export default function PostTripForm({ title, description, setTitle, setDescription, handleSubmit, error }) {
     // Determine if the title input is invalid (used to disable button and show validation)
-    const isTitleInvalid = title.trim().length < 5 || title.length > 100;
+    const isTitleInvalid = title?.trim().length < 5 || title?.length > 100;
 
     return (
         <div className="card shadow-sm mb-4">
@@ -23,12 +23,12 @@ export default function PostTripForm({ title, description, setTitle, setDescript
                     />
 
                     {/* Validation Feedback for Title */}
-                    {title.length > 0 && title.length < 5 && (
+                    {title?.length > 0 && title.length < 5 && (
                         <div className="form-text text-danger">
                             Title must be at least 5 characters.
                         </div>
                     )}
-                    {title.length > 100 && (
+                    {title?.length > 100 && (
                         <div className="form-text text-danger">
                             Title must not exceed 100 characters.
                         </div>

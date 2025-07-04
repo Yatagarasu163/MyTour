@@ -9,7 +9,7 @@ export default function TripPlanDetails({ tripPlan , isEditable }) {
 
     // Sort activities by day and start time when tripPlan.activities changes
     useEffect(() => {
-        const sorted = [...(tripPlan.activities || [])].sort((a, b) => {
+        const sorted = [...(tripPlan.activities || [])]?.sort((a, b) => {
             if (a.activity_day_number !== b.activity_day_number) {
                 return a.activity_day_number - b.activity_day_number;
             }
@@ -30,9 +30,9 @@ export default function TripPlanDetails({ tripPlan , isEditable }) {
         <div className="container my-4">
             {/* Trip General Info Section */}
             <div className="mb-4">
-                <h2 className="mb-4 fw-bold text-center">{tripPlan.plan_name}</h2>
-                <p className="text-center mb-2"><strong>Days:</strong> {tripPlan.plan_day}</p>
-                <p className="text-center mb-4"><strong>State:</strong> {tripPlan.plan_state}</p>
+                <h2 className="mb-4 fw-bold text-center">{tripPlan?.plan_name}</h2>
+                <p className="text-center mb-2"><strong>Days:</strong> {tripPlan?.plan_day}</p>
+                <p className="text-center mb-4"><strong>State:</strong> {tripPlan?.plan_state}</p>
             </div>
 
             {/* Loop through grouped activities by day */}
@@ -50,34 +50,34 @@ export default function TripPlanDetails({ tripPlan , isEditable }) {
 
                                 {/* Activity Details */}
                                 <div className="card-body">
-                                    <p><strong>Time:</strong> {activity.activity_start_time} – {activity.activity_end_time}</p>
-                                    <p><strong>Description:</strong> {activity.activity_description}</p>
+                                    <p><strong>Time:</strong> {activity?.activity_start_time} – {activity?.activity_end_time}</p>
+                                    <p><strong>Description:</strong> {activity?.activity_description}</p>
                                     
                                      {/* Optional: display tags only if available */}
-                                    {activity.activity_tags?.length > 0 && (
-                                    <p><strong>Tags:</strong> {activity.activity_tags.join(", ")}</p>
+                                    {activity?.activity_tags?.length > 0 && (
+                                    <p><strong>Tags:</strong> {activity?.activity_tags.join(", ")}</p>
                                     )}
 
-                                    <p><strong>Estimated Cost:</strong> RM {activity.activity_estimated_cost}</p>
-                                    <p><strong>Estimated Distance:</strong> {activity.activity_estimated_distance} KM</p>
-                                    <p><strong>Booking Required:</strong> {activity.activity_booking_required ? "Yes" : "No"}</p>
-                                    <p><strong>Accessible:</strong> {activity.activity_accessible ? "Yes" : "No"}</p>
-                                    <p><strong>Tip:</strong> {activity.activity_local_tip}</p>
+                                    <p><strong>Estimated Cost:</strong> RM {activity?.activity_estimated_cost}</p>
+                                    <p><strong>Estimated Distance:</strong> {activity?.activity_estimated_distance} KM</p>
+                                    <p><strong>Booking Required:</strong> {activity?.activity_booking_required ? "Yes" : "No"}</p>
+                                    <p><strong>Accessible:</strong> {activity?.activity_accessible ? "Yes" : "No"}</p>
+                                    <p><strong>Tip:</strong> {activity?.activity_local_tip}</p>
 
                                     {/* Optional: only show note if it exists */}
-                                    {activity.activity_note && (
-                                        <p><strong>Note:</strong> {activity.activity_note}</p>
+                                    {activity?.activity_note && (
+                                        <p><strong>Note:</strong> {activity?.activity_note}</p>
                                     )}
                                 </div>
 
                                 {/* Edit/Delete Buttons only shown if isEditable = true */}
                                 {isEditable && (
                                 <div className="card-footer bg-transparent d-flex justify-content-end gap-2">
-                                    <EditActivityButton activity_id={activity.activity_id} />
+                                    <EditActivityButton activity_id={activity?.activity_id} />
                                     <DeleteActivityButton
-                                    activity_id={activity.activity_id}
+                                    activity_id={activity?.activity_id}
                                     onDelete={(deletedId) =>
-                                        setActivities((prev) => prev.filter((a) => a.activity_id !== deletedId))
+                                        setActivities((prev) => prev?.filter((a) => a?.activity_id !== deletedId))
                                     }
                                     />
                                 </div>

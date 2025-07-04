@@ -29,7 +29,7 @@ export default function ReportsTable({ reports, loading, onResolve, onDeleteRepo
     }, [highlightId]);
 
     const filteredReports = useMemo(() => {
-        return reports.filter((report) => {
+        return reports?.filter((report) => {
             const matchesSearch = report.reason?.toLowerCase().includes(searchQuery.toLowerCase()) ||
                 report.content?.toLowerCase().includes(searchQuery.toLowerCase()) ||
                 report.reporter_name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -39,7 +39,7 @@ export default function ReportsTable({ reports, loading, onResolve, onDeleteRepo
             const matchesStatus = statusFilter === "All" || report.status.toLowerCase() === statusFilter.toLowerCase();
 
             return matchesSearch && matchesType && matchesStatus;
-        });
+        }) || [];
     }, [reports, searchQuery, typeFilter, statusFilter]);
 
     if (loading) return <p>Loading reports...</p>;

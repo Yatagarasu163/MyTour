@@ -40,7 +40,7 @@ export default function UserTable({ users, loading, onSuspendRestore, onDelete }
     };
 
     const filteredUsers = useMemo(() => {
-        let result = users.filter((user) => {
+        let result = users?.filter((user) => {
             const matchesSearch =
                 user.user_name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                 user.user_email.toLowerCase().includes(searchQuery.toLowerCase());

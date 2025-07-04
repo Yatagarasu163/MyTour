@@ -60,17 +60,17 @@ export default function GenerateForm({
                     />
                     
                     {/* Validation messages */}
-                    {tripName.trim().length === 0 && (
+                    {tripName?.trim()?.length === 0 && (
                         <div className="form-text text-danger">
                             Trip name is required.
                         </div>
                     )}
-                    {tripName.length > 0 && tripName.length < 5 && (
+                    {tripName?.length > 0 && tripName.length < 5 && (
                         <div className="form-text text-danger">
                             Trip name must be at least 5 characters.
                         </div>
                     )}
-                    {tripName.length > 100 && (
+                    {tripName?.length > 100 && (
                         <div className="form-text text-danger">
                             Trip name must not exceed 100 characters.
                         </div>
@@ -101,7 +101,7 @@ export default function GenerateForm({
                                         type="checkbox"
                                         className="form-check-input"
                                         id={stateName}
-                                        checked={selectedStates.includes(stateName)}
+                                        checked={selectedStates?.includes(stateName)}
                                         onChange={() => handleCheckboxChange(stateName)}
                                     />
                                     <label className="form-check-label" htmlFor={stateName}>
@@ -153,7 +153,7 @@ export default function GenerateForm({
                         className="btn btn-success"
                         onClick={() => setShowConfirmModal(true)}
                         disabled={
-                            !tripName.trim() || tripName.length < 5 || tripName.length > 100
+                            !tripName?.trim() || tripName?.length < 5 || tripName?.length > 100
                         }
                         >
                             Save Trip Plan
