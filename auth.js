@@ -16,7 +16,7 @@ const authOptions = {
             let user = null;
             const mode = credentials.mode;
             const type = credentials.type;
-            const saltRounds = 10;
+            const saltRounds = process.env.SALT_ROUNDS;
             //Checks if it is a user or an admin
             if(type == "user"){
                 try{

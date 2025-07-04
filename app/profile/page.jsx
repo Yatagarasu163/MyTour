@@ -5,30 +5,31 @@ import { useEffect, useState } from "react";
 import { Card, CardTitle, CardHeader, CardContent } from "@/components/ui/card";
 import { Avatar } from "@/components/ui/avatar";
 import SessionChecking from "@/app/component/SessionChecking";
+import EditDetails from "@/pages/components/profile/EditDetails";
 
 export default function Profile() {
   const [top5posts, settop5posts] = useState([]);
   const { data: session, status } = useSession();
-  const loading = status === "loading";
+  const loading = status === "loading" || status == "unauthenticated";
   const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    if (session?.user?.id) {
-      
-      setUser(session.user);
-          fetch(`/api/admin/users/${session.user.id}/top5`)
-      .then(res => res.json())
-      .then(data => {
-        settop5posts(data.posts);
-      })
-      .catch(err => {
-        console.error("Internal server error: ", err)
-      })
-    } 
-    
-  }, [session]);
- 
 
+    useEffect(() => {
+    if (status === "authenticated") {
+      fetch(`/api/admin/users/${session?.user?.id}/userDetails`)
+        .then((res) => res.json())
+        .then((data) => setUser(data.user))
+        .catch((err) => console.error("User details fetch error:", err));
+
+        console.log(user);
+
+      fetch(`/api/admin/users/${session?.user?.id}/top5`)
+        .then((res) => res.json())
+        .then((data) => settop5posts(data.posts))
+        .catch((err) => console.error("Internal server error: ", err));
+    }
+  }, [status, session?.user?.id, session]);
+  
   if (loading) return <p>Loading...</p>;
 
   return (
@@ -46,7 +47,10 @@ export default function Profile() {
                 src="/globe.svg"
                 alt="placeholder"
               />
-              <p>User: {user?.name}</p>
+              <p>User: {user?.user_name}</p>
+              <p>Email: {user?.user_email}</p>
+              {/* Part to edit the user details. Takes in user type and the user id from the current session. */}
+              <EditDetails userType="user" userID={session?.user?.id}/>
             </CardContent>
           </Card>
         </div>
